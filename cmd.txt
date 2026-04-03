@@ -18,3 +18,8 @@ python train_single_organelle.py --domain urocell_3 --organelle fusiform-vesicle
 python train_mexconn.py --domain drosophila-vnc 
 python train_mexconn.py --domain multiclass     
 python train_mexconn.py --domain urocell_3   
+
+
+# ── compile collected test CSVs ──────────────────────────────────────────────────────────
+
+python collect_results.py
