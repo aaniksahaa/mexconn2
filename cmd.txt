@@ -1,16 +1,16 @@
-# ── single_org_train.py commands ────────────────────────────────────────────────────────
+# ── train_single_organelle.py commands ────────────────────────────────────────────────────────
 
-python single_org_train.py --domain drosophila-vnc --organelle mitochondria
-python single_org_train.py --domain drosophila-vnc --organelle synapses
-python single_org_train.py --domain drosophila-vnc --organelle membranes
+python train_single_organelle.py --domain drosophila-vnc --organelle mitochondria
+python train_single_organelle.py --domain drosophila-vnc --organelle synapses
+python train_single_organelle.py --domain drosophila-vnc --organelle membranes
 
-python single_org_train.py --domain multiclass --organelle mitochondria
-python single_org_train.py --domain multiclass --organelle vesicles
-python single_org_train.py --domain multiclass --organelle membranes
+python train_single_organelle.py --domain multiclass --organelle mitochondria
+python train_single_organelle.py --domain multiclass --organelle vesicles
+python train_single_organelle.py --domain multiclass --organelle membranes
 
-python single_org_train.py --domain urocell_3 --organelle mitochondria
-python single_org_train.py --domain urocell_3 --organelle lysosomes
-python single_org_train.py --domain urocell_3 --organelle fusiform-vesicles
+python train_single_organelle.py --domain urocell_3 --organelle mitochondria
+python train_single_organelle.py --domain urocell_3 --organelle lysosomes
+python train_single_organelle.py --domain urocell_3 --organelle fusiform-vesicles
 
 
 # ── train_mexconn.py commands ──────────────────────────────────────────────────────────
