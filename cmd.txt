@@ -1,3 +1,18 @@
+# ── single_org_train.py commands ────────────────────────────────────────────────────────
+
+python single_org_train.py --domain drosophila-vnc --organelle mitochondria
+python single_org_train.py --domain drosophila-vnc --organelle synapses
+python single_org_train.py --domain drosophila-vnc --organelle membranes
+
+python single_org_train.py --domain multiclass --organelle mitochondria
+python single_org_train.py --domain multiclass --organelle vesicles
+python single_org_train.py --domain multiclass --organelle membranes
+
+python single_org_train.py --domain urocell_3 --organelle mitochondria
+python single_org_train.py --domain urocell_3 --organelle lysosomes
+python single_org_train.py --domain urocell_3 --organelle fusiform-vesicles
+
+
 # ── train_mexconn.py commands ──────────────────────────────────────────────────────────
 
 # Full run (train + val + test) — all paths auto-derived
