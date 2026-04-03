@@ -293,7 +293,7 @@ def parse_args():
     p.add_argument('--stride',       type=int, default=128)
     # Training hyper-params
     p.add_argument('--batch_size',   type=int,   default=8)
-    p.add_argument('--epochs',       type=int,   default=50)
+    p.add_argument('--epochs',       type=int,   default=200)
     p.add_argument('--lr',           type=float, default=1e-4)
     p.add_argument('--seed',         type=int,   default=42,
                    help='Global random seed for full reproducibility')
@@ -321,8 +321,8 @@ def main():
 
     # ── Auto-derive output directories ──
     seed_tag    = f"seed_{args.seed}"
-    models_dir  = args.out_dir or os.path.join("models",  args.domain, seed_tag)
-    results_dir = os.path.join("results", args.domain, seed_tag)
+    models_dir  = args.out_dir or os.path.join("models",  "mexconn", args.domain, seed_tag)
+    results_dir = os.path.join("results", "mexconn", args.domain, seed_tag)
     os.makedirs(models_dir,  exist_ok=True)
     os.makedirs(results_dir, exist_ok=True)
 

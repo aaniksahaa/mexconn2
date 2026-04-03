@@ -1,28 +1,28 @@
-# ── run.py commands ──────────────────────────────────────────────────────────
+# ── train_mexconn.py commands ──────────────────────────────────────────────────────────
 
 # Full run (train + val + test) — all paths auto-derived
-python run.py --domain drosophila-vnc --epochs 50 --batch_size 8 --lr 1e-4
-python run.py --domain multiclass     --epochs 50 --batch_size 8 --lr 1e-4
-python run.py --domain urocell_3      --epochs 50 --batch_size 8 --lr 1e-4
+python train_mexconn.py --domain drosophila-vnc --epochs 50 --batch_size 8 --lr 1e-4
+python train_mexconn.py --domain multiclass     --epochs 50 --batch_size 8 --lr 1e-4
+python train_mexconn.py --domain urocell_3      --epochs 50 --batch_size 8 --lr 1e-4
 
 # Train only
-python run.py --domain drosophila-vnc train --epochs 50 --batch_size 8
-python run.py --domain multiclass     train --epochs 50 --batch_size 8
-python run.py --domain urocell_3      train --epochs 50 --batch_size 8
+python train_mexconn.py --domain drosophila-vnc train --epochs 50 --batch_size 8
+python train_mexconn.py --domain multiclass     train --epochs 50 --batch_size 8
+python train_mexconn.py --domain urocell_3      train --epochs 50 --batch_size 8
 
 # Test only (uses saved model from results/<domain>/seed_42/)
-python run.py --domain drosophila-vnc test
-python run.py --domain multiclass     test
-python run.py --domain urocell_3      test
+python train_mexconn.py --domain drosophila-vnc test
+python train_mexconn.py --domain multiclass     test
+python train_mexconn.py --domain urocell_3      test
 
 # Different seed (output goes to results/<domain>/seed_123/)
-python run.py --domain drosophila-vnc --seed 123 --epochs 50 --batch_size 8
+python train_mexconn.py --domain drosophila-vnc --seed 123 --epochs 50 --batch_size 8
 
 # Override output dir explicitly
-python run.py --domain urocell_3 --out_dir my_exp/urocell_3 --epochs 50
+python train_mexconn.py --domain urocell_3 --out_dir my_exp/urocell_3 --epochs 50
 
 # Test with an explicit model path
-python run.py --domain drosophila-vnc test --model_path results/drosophila-vnc/seed_42/model_best.pth
+python train_mexconn.py --domain drosophila-vnc test --model_path results/drosophila-vnc/seed_42/model_best.pth
 
 # Custom architecture (larger encoder)
-python run.py --domain urocell_3 --base_features 64 128 256 512 --epochs 50 --batch_size 4
+python train_mexconn.py --domain urocell_3 --base_features 64 128 256 512 --epochs 50 --batch_size 4
