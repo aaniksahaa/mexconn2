@@ -20,6 +20,7 @@ import pandas as pd
 
 
 DEFAULT_KEEP_COLUMNS = [
+    "model",
     "domain",
     "organelle",
     "seed",
@@ -74,12 +75,14 @@ def collect_one_mode(results_root: Path, mode: str, output_dir: Path) -> Path:
         if df.empty:
             continue
 
+        df["model"] = mode
+
         if "seed" not in df.columns:
             inferred_seed = infer_seed_from_path(csv_path)
             if inferred_seed is not None:
                 df["seed"] = inferred_seed
 
-        drop_columns = [col for col in ("model", "test_patches") if col in df.columns]
+        drop_columns = [col for col in ("test_patches",) if col in df.columns]
         df = df.drop(columns=drop_columns)
 
         keep_columns = [col for col in DEFAULT_KEEP_COLUMNS if col in df.columns]
